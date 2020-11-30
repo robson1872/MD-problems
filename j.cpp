@@ -37,6 +37,6 @@ int main(){
         x += r[i]*modx[i]*modi[i];
     }
     x%=pro;
-    cout<<x;
+    cout<<pro<<"k + "<<x;
     return 0;
 }

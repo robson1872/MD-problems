@@ -1,19 +1,19 @@
 #include <iostream>
 #define ll long long 
 using namespace std;
-ll lol(ll a, ll b, ll &x, ll &y) {
+ll lol(ll a, ll b, ll &s, ll &t) {
     if(b == 0) {
-       x = 1;
-       y = 0;
+       s = 1;
+       t = 0;
        return a;
     }
     ll x1, y1, mdc = lol(b, a % b, x1, y1);
-    x = y1;
-    y = x1 - (a / b) * y1;
+    s = y1;
+    t = x1 - (a / b) * y1;
     return mdc;
 }
 int main(){
-   ll a,b,x,y,mdc,mud=0;
+   ll a,b,s,t,mdc,mud=0;
    cin>>a>>b;
    if(a < b){//bora inverter?
        ll tmp = a;
@@ -21,11 +21,11 @@ int main(){
        b = tmp;
        mud = 1;
    }
-   mdc = lol(a, b, x, y);
+   mdc = lol(a, b, s, t);
    if(mud){//
-       cout<<y<<" "<<x;//coeficientes 
+       cout<<t<<" "<<s;//coeficientes 
    }else{
-       cout<<x<<" "<<y;
+       cout<<s<<" "<<t;
    }
    return 0;
 }

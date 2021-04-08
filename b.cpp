@@ -13,6 +13,7 @@ bool prime(long long int n){
     return true;
 }
 int main(){
+    ios::sync_with_stdio(false);cin.tie(NULL);
     bool goddontexist = true;
     long long int a = 2;
     time_t futur = time(NULL) + 61;
